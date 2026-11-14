@@ -1,0 +1,26 @@
+import 'dotenv/config';
+import express from 'express';
+import Database from 'better-sqlite3';
+import helmet from 'helmet';
+import crypto from 'node:crypto';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+const root=path.dirname(fileURLToPath(import.meta.url));
+const db=new Database(path.join(root,'techvibe.sqlite'));
+db.pragma('journal_mode = WAL');
+db.exec('CREATE TABLE IF NOT EXISTS records(id TEXT PRIMARY KEY,type TEXT,title TEXT,robot TEXT,board TEXT,status TEXT,updated_at TEXT,data TEXT); CREATE TABLE IF NOT EXISTS sessions(token TEXT PRIMARY KEY,expiry INTEGER)');
+const models=[['EMO','Robot đồng hành AI với biểu cảm sống động'],['Vector','Robot AI tương tác bằng giọng nói và chuyển động'],['Emun','Robot giáo dục và học tiếng Anh'],['AIBI','Robot AI bỏ túi'],['Alpha Mini','Robot hình người phục vụ học tập và trình diễn'],['Loona','Robot thú cưng thông minh'],['Eiliko','Robot đồng hành nhỏ gọn'],['Cozmo','Robot học lập trình và giải trí'],['Looi','Robot đồng hành dùng điện thoại']];
+if(db.prepare('SELECT count(*) n FROM records').get().n===0){const stmt=db.prepare('INSERT INTO records VALUES(?,?,?,?,?,?,?,?)');for(const [title,summary] of models)stmt.run(crypto.randomUUID(),'robots',title,title,'','Giới thiệu',new Date().toISOString(),JSON.stringify({summary,public:true,image:''}));for(const [title,robot,board] of [['EMO – Direct AI','EMO','ESP32 / K210'],['Vector – Custom AI','Vector','OTA / Voice'],['EMO – Mapping board','EMO','GPIO / UART / SPI']])stmt.run(crypto.randomUUID(),'firmware',title,robot,board,'Đang phát triển',new Date().toISOString(),'{}')}
+const app=express();app.use(helmet({contentSecurityPolicy:false}));app.use(express.json({limit:'1mb'}));app.use(express.static(path.join(root,'public')));
+const password=process.env.ADMIN_PASSWORD,secret=process.env.SESSION_SECRET;
+const hash=x=>crypto.createHash('sha256').update(x).digest('hex');
+const auth=(req,res,next)=>{const token=(req.headers.authorization||'').replace(/^Bearer /,'');const s=token&&db.prepare('SELECT expiry FROM sessions WHERE token=?').get(hash(token));if(!s||s.expiry<Date.now())return res.status(401).json({error:'Cần đăng nhập'});next()};
+const parse=r=>({...r,data:JSON.parse(r.data)});
+app.get('/api/public/robots',(req,res)=>res.json(db.prepare("SELECT * FROM records WHERE type='robots' ORDER BY title").all().map(parse).filter(x=>x.data.public!==false)));
+app.post('/api/login',(req,res)=>{if(!password||!secret)return res.status(503).json({error:'Chưa cấu hình mật khẩu quản trị'});const a=Buffer.from(hash(String(req.body.password||'')+secret));const b=Buffer.from(hash(password+secret));if(!crypto.timingSafeEqual(a,b))return res.status(401).json({error:'Sai mật khẩu'});const token=crypto.randomBytes(32).toString('hex');db.prepare('INSERT INTO sessions VALUES(?,?)').run(hash(token),Date.now()+86400000);res.json({token})});
+app.get('/api/records',auth,(req,res)=>res.json(db.prepare('SELECT * FROM records ORDER BY updated_at DESC').all().map(parse)));
+app.post('/api/records',auth,(req,res)=>{const {type,title,robot='',board='',status='',data={}}=req.body;const allowed=['robots','inventory','repairs','orders','shipping','firmware','features','tasks','documents','tests','hardware'];if(!allowed.includes(type)||typeof title!=='string'||!title.trim()||typeof data!=='object'||!data||Array.isArray(data))return res.status(400).json({error:'Dữ liệu không hợp lệ'});const id=crypto.randomUUID();db.prepare('INSERT INTO records VALUES(?,?,?,?,?,?,?,?)').run(id,type,title.slice(0,200),String(robot).slice(0,100),String(board).slice(0,100),String(status).slice(0,100),new Date().toISOString(),JSON.stringify(data));res.json({id})});
+app.put('/api/records/:id',auth,(req,res)=>{const old=db.prepare('SELECT * FROM records WHERE id=?').get(req.params.id);if(!old)return res.sendStatus(404);const {title=old.title,robot=old.robot,board=old.board,status=old.status,data=JSON.parse(old.data)}=req.body;db.prepare('UPDATE records SET title=?,robot=?,board=?,status=?,updated_at=?,data=? WHERE id=?').run(String(title).slice(0,200),String(robot).slice(0,100),String(board).slice(0,100),String(status).slice(0,100),new Date().toISOString(),JSON.stringify(data),req.params.id);res.json({ok:true})});
+app.delete('/api/records/:id',auth,(req,res)=>{db.prepare('DELETE FROM records WHERE id=?').run(req.params.id);res.json({ok:true})});
+app.get('*',(req,res)=>res.sendFile(path.join(root,'public','index.html')));
+app.listen(process.env.PORT||3000,'0.0.0.0',()=>console.log('TechVibe Home ready'));
