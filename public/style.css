@@ -222,3 +222,9 @@ header nav{padding-top:14px;padding-bottom:14px}
  .contact-toggle{font-size:13px!important;padding:10px 13px!important;min-height:44px}
  #scroll-to-top{right:17px!important;bottom:calc(96px + env(safe-area-inset-bottom))!important;width:36px!important;height:36px!important;border-radius:12px!important}
 }
+
+
+/* Ensure back-to-top arrow stays visible on Safari and above contact panel */
+#scroll-to-top svg{display:block!important;width:22px!important;height:22px!important;min-width:22px;min-height:22px;fill:none!important;stroke:#285b40!important;stroke-width:2.5!important;stroke-linecap:round!important;stroke-linejoin:round!important;opacity:1!important;visibility:visible!important}
+#scroll-to-top svg path{fill:none!important;stroke:#285b40!important;stroke-width:2.5!important}
+#scroll-to-top.visible{visibility:visible!important;opacity:1!important;pointer-events:auto!important}
