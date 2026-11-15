@@ -8,12 +8,12 @@ export const robotProfiles={
       "Các trò chơi và lệnh chính hãng phụ thuộc phiên bản firmware."
     ],
     "custom": [
-      "Dự án EMO AI của TechVibe Home: giao tiếp liên tục và xử lý hội thoại tiếng Việt qua AI trực tiếp, ưu tiên Gemini.",
+      "Firmware tiếng Việt độc quyền do TechVibe Home phát triển cho EMO tương thích: giao tiếp liên tục và xử lý hội thoại tiếng Việt qua AI trực tiếp, ưu tiên Gemini.",
       "Đã phát triển điều khiển bằng ngôn ngữ tự nhiên, voice command, explore mode và sử dụng camera theo cấu hình thử nghiệm.",
       "Hỗ trợ hotspot cấu hình Wi-Fi không cần app trong bản firmware tùy biến.",
       "Hệ thống có định hướng chuyển giữa kết nối chính hãng và AI trực tiếp; khả năng dùng app stock cần kiểm tra trên từng máy."
     ],
-    "languages": "Firmware tùy biến được phát triển cho tiếng Việt và nhiều ngôn ngữ; không đồng nghĩa EMO chính hãng có sẵn tiếng Việt.",
+    "languages": "Có tiếng Việt qua firmware riêng do TechVibe Home phát triển; EMO nguyên bản của hãng không mặc định có tiếng Việt. Cần kiểm tra phiên bản board và firmware.",
     "hardware": "Dự án nghiên cứu ESP32-S3 ↔ K210 qua UART/SPI, camera, mic, màn hình, animation; sơ đồ GPIO thay đổi theo phiên bản board.",
     "caution": "Tính năng custom cần xác nhận board và firmware thực tế trước khi giao."
   },
@@ -59,10 +59,10 @@ export const robotProfiles={
     ],
     "custom": [
       "TechVibe Home đã nghiên cứu cấu hình Wi-Fi bằng hotspot, điều khiển và cập nhật từ xa cho Alpha Mini tương thích.",
-      "Alpha Mini thế hệ 1 có các hướng phát triển Scratch/Blockly và hỗ trợ tiếng Việt theo cấu hình tùy biến.",
+      "TechVibe Home phát triển giải pháp tiếng Việt riêng cho Alpha Mini thế hệ 1 tương thích, cùng các hướng phát triển Scratch/Blockly.",
       "Alpha Mini 2 không được giới thiệu là có cùng khả năng đa ngôn ngữ và lập trình của thế hệ 1."
     ],
-    "languages": "Phải phân biệt Alpha Mini 1 và Alpha Mini 2; hỗ trợ tiếng Việt tùy phiên bản và firmware.",
+    "languages": "Tiếng Việt cho Alpha Mini thế hệ 1 do TechVibe Home phát triển. Không mặc định áp dụng cho Alpha Mini 2 hoặc máy chưa cài firmware tương thích.",
     "hardware": "Bắt buộc xác nhận đời máy trước khi tư vấn lập trình, tính năng và firmware.",
     "caution": "Không áp dụng danh sách tính năng của Alpha Mini 1 cho Alpha Mini 2."
   },
@@ -75,9 +75,9 @@ export const robotProfiles={
     ],
     "custom": [
       "TechVibe Home hỗ trợ thiết lập kết nối và xử lý sự cố mạng cho Loona.",
-      "Chưa công bố firmware custom tiếng Việt hoàn thiện trên Loona."
+      "Loona có hỗ trợ tiếng Việt từ hãng; TechVibe Home hỗ trợ tư vấn, cập nhật và thiết lập tính năng tương thích."
     ],
-    "languages": "Cần xác nhận hỗ trợ tiếng Việt theo phiên bản đang bán.",
+    "languages": "Loona hỗ trợ tiếng Việt từ hãng, không phải firmware tiếng Việt do TechVibe Home phát triển. Kiểm tra firmware và vùng phát hành khi giao máy.",
     "hardware": "Kết nối Wi-Fi 2.4 GHz; thời lượng pin thực tế tùy cách chơi.",
     "caution": "Không hứa hẹn thời lượng pin cố định cho mọi điều kiện sử dụng."
   },
