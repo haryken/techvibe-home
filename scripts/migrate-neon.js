@@ -11,7 +11,7 @@ const client=await pool.connect();
 try {
   await client.query('BEGIN');
   const migration=await fs.readFile(path.join(root,'migrations/001_init_neon.sql'),'utf8');
-  await client.query(migration);
+  await client.query(migration.replace(/^\\s*BEGIN\\s*;/im,'').replace(/^\\s*COMMIT\\s*;/im,''));
   const catalog=JSON.parse(await fs.readFile(path.join(root,'data/robots.seed.json'),'utf8'));
   let created=0, skipped=0;
   for(const robot of catalog) {
