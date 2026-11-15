@@ -185,3 +185,27 @@ header nav{padding-top:14px;padding-bottom:14px}
  .hero-note>div{min-width:0}
  .hero-note small{overflow-wrap:anywhere}
 }
+
+
+/* Clean product cards: one purchase action and a restrained detail link */
+.robot-card{display:flex;flex-direction:column;min-width:0}
+.robot-body{display:flex;flex-direction:column;flex:1;min-width:0;padding:24px}
+.robot-title{display:flex;align-items:center;justify-content:space-between}
+.robot-body>p{min-height:0;margin-bottom:8px}
+.robot-body .chips{margin:14px 0 12px}
+.robot-shop-actions{margin-top:auto;padding-top:12px;gap:12px}
+.robot-add-cart{width:100%;border-radius:12px;min-height:46px;background:#285b40;color:#fff;border:1px solid #285b40;font-size:14px;font-weight:700;transition:background .18s ease}
+.robot-add-cart:hover{background:#1c4630}
+.robot-detail-link{display:flex!important;align-items:center;justify-content:center;gap:10px;width:100%;min-height:46px;margin-top:10px!important;border:1px solid #cbdccf;border-radius:12px;color:#285b40!important;font-size:14px;font-weight:700;text-decoration:none!important;background:#fff;transition:background .18s ease}
+.robot-detail-link:hover{background:#edf4ed}
+.robot-detail-link svg{width:18px;height:18px;flex:none}
+.robot-visual{overflow:hidden}
+.robot-visual .product-art{width:100%;height:100%;display:grid;place-items:center;min-width:0}
+.robot-visual .product-art img{max-width:100%;max-height:100%;object-fit:contain}
+@media(max-width:700px){
+ .robot-body{padding:20px}
+ .robot-body>p{line-height:1.65}
+ .robot-card{border-radius:20px}
+ .robot-visual{height:245px}
+ .robot-add-cart,.robot-detail-link{min-height:48px}
+}
