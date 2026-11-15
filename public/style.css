@@ -74,3 +74,12 @@ header nav{padding-top:14px;padding-bottom:14px}
 .robot-detail-link:hover{text-decoration:underline}
 @media(max-width:800px){.detail-layout{grid-template-columns:1fr}.detail-photo{min-height:280px}.detail-related{grid-template-columns:repeat(2,minmax(0,1fr))}.robot-detail{padding-top:18px}}
 @media(max-width:420px){.detail-related{grid-template-columns:1fr}.detail-actions .pill{width:100%;text-align:center;justify-content:center}}
+
+
+.customer-page{padding-top:65px;padding-bottom:110px;min-height:65vh}.customer-page h1{font-size:clamp(38px,5vw,68px);margin:16px 0}.customer-page>p{max-width:750px;line-height:1.7;color:#5c6f60}
+.compare-controls{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}.compare-controls label{display:flex;align-items:center;gap:8px;padding:12px 16px;border:1px solid #d8e2d8;border-radius:14px;background:white;cursor:pointer}
+.compare-scroll{overflow-x:auto}.compare-table{border-collapse:collapse;width:100%;min-width:570px;text-align:left}.compare-table th,.compare-table td{padding:18px;vertical-align:top;border-bottom:1px solid #dae4da;min-width:150px}.compare-table thead th{background:#edf3ed;font-size:18px}.compare-table tbody th{font-size:13px;min-width:130px}.compare-table td{font-size:14px;line-height:1.6}
+#track-form{max-width:530px;display:grid;gap:16px;margin:32px 0}#track-form label{display:grid;gap:7px;font-weight:600}#track-form input{width:100%;border:1px solid #ccd9ce;border-radius:12px;padding:14px}#track-form button{border:0}
+.detail-feature-sections{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}.detail-feature-sections>div{background:#f0f4ee;border-radius:18px;padding:22px}.detail-feature-sections h3{margin-top:0}.detail-feature-sections p{white-space:pre-wrap;line-height:1.7;color:#526657}
+.product-admin-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.product-admin-fields[hidden]{display:none!important}.product-admin-fields label{display:grid;gap:7px}.product-admin-fields input,.product-admin-fields select,.product-admin-fields textarea{width:100%}
+@media(max-width:700px){.detail-feature-sections,.product-admin-fields{grid-template-columns:1fr}.customer-page{padding-top:35px}}
