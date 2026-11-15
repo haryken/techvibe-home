@@ -234,3 +234,14 @@ header nav{padding-top:14px;padding-bottom:14px}
 button#scroll-to-top.scroll-to-top{box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;line-height:1!important;overflow:hidden!important;flex-direction:row!important}
 button#scroll-to-top.scroll-to-top svg{position:static!important;display:block!important;flex:0 0 20px!important;width:20px!important;height:20px!important;max-width:20px!important;max-height:20px!important;margin:0!important;padding:0!important;transform:none!important;overflow:visible!important}
 button#scroll-to-top.scroll-to-top svg path{stroke:#285b40!important;stroke-width:2.2!important}
+
+
+/* Rich, readable robot buying guide */
+.detail-guide{padding:45px 0 30px}
+.detail-guide h2{font-size:clamp(26px,3vw,40px);line-height:1.2;margin:16px 0 24px}
+.detail-guide-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.detail-guide-grid article{min-width:0;background:#f5f8f3;border:1px solid #dce8db;border-radius:22px;padding:24px}
+.detail-guide-grid h3{font-size:18px;line-height:1.4;margin:0 0 16px;color:#254633}
+.detail-guide-grid ul{margin:0;padding-left:20px}
+.detail-guide-grid li,.detail-guide-grid p{font-size:15px;line-height:1.8;color:#526a56;margin:0 0 10px}
+@media(max-width:800px){.detail-guide-grid{grid-template-columns:1fr}.detail-guide-grid article{padding:20px}.detail-guide{padding-top:30px}}
