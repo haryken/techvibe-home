@@ -5,7 +5,7 @@ export const robotProfiles={
     "audience": "Người yêu robot đồng hành, thích trò chuyện và khám phá AI.",
     "stock": [
       "Theo LivingAI: hơn 1.000 biểu cảm và chuyển động, nhận diện khuôn mặt bằng camera HD, bốn micro định hướng âm thanh, cảm biến chạm trên đầu, nhảy múa và khám phá mặt bàn.",
-      "Các trò chơi và lệnh chính hãng phụ thuộc phiên bản firmware."
+      "Theo LivingAI: nhận diện tối đa 10 khuôn mặt, nhận biết mép bàn để tránh rơi, nhắc lịch/báo thức, xem thời tiết, điều khiển đèn thông minh, chụp ảnh, trò chơi và ứng dụng quản lý; phụ thuộc firmware và phụ kiện."
     ],
     "custom": [
       "Firmware tiếng Việt độc quyền do TechVibe Home phát triển cho EMO tương thích: giao tiếp liên tục và xử lý hội thoại tiếng Việt qua AI trực tiếp, ưu tiên Gemini.",
@@ -23,7 +23,7 @@ export const robotProfiles={
     "audience": "Người thích robot tự hành, lập trình và trải nghiệm AI.",
     "stock": [
       "Theo Anki: di chuyển bằng bánh xích, tự khám phá và quay về đế sạc; nhận diện khuôn mặt, chụp ảnh, phản hồi khi vuốt lưng và tương tác với khối lập phương.",
-      "Tính năng kết nối chính hãng có thể phụ thuộc dịch vụ và phiên bản phần mềm."
+      "Theo Anki: hỗ trợ lệnh thoại, báo thức, thời tiết, ảnh chụp, tự về sạc và một khối lập phương; các tính năng AI/đám mây chính hãng có thể cần gói dịch vụ."
     ],
     "custom": [
       "TechVibe Home đã phát triển firmware Vector hỗ trợ giao tiếp tiếng Việt và nhiều ngôn ngữ (dự án 14 ngôn ngữ).",
@@ -70,7 +70,7 @@ export const robotProfiles={
     "headline": "Robot thú cưng di chuyển, khám phá và chơi trong nhà",
     "audience": "Gia đình muốn robot thú cưng di chuyển và tương tác.",
     "stock": [
-      "Chuyển động, biểu cảm, nhận diện và các trò chơi tương tác.",
+      "Theo KEYi: nhận diện khuôn mặt và cử chỉ, cảm biến 3D-ToF tránh vật cản, camera RGB, các trò chơi tương tác qua ứng dụng, AI và tự về đế sạc trên phiên bản hỗ trợ.",
       "Sử dụng Wi-Fi theo yêu cầu của thiết bị; một số chức năng phụ thuộc kết nối mạng."
     ],
     "custom": [
@@ -101,8 +101,8 @@ export const robotProfiles={
     "headline": "Robot học tiếng Anh – luyện giao tiếp cùng người bạn nhỏ",
     "audience": "Trẻ em và người mới học muốn thực hành tiếng Anh theo cách tương tác.",
     "stock": [
-      "Định hướng sản phẩm giáo dục và luyện nói tiếng Anh.",
-      "Chương trình học, độ tuổi phù hợp và nội dung khóa học sẽ được xác nhận khi tư vấn."
+      "Robot giáo dục tiếng Anh với ngoại hình nhiều màu sắc, hỗ trợ hoạt động học tập tương tác; nội dung học và khả năng thực tế được xác nhận theo phần mềm của máy.",
+      "Tập trung học tiếng Anh bằng tương tác với robot: luyện từ vựng, câu nói và phản xạ giao tiếp theo nội dung học được cung cấp; lộ trình và bài học cụ thể cần xác nhận."
     ],
     "custom": [
       "Dự án robot giáo dục được TechVibe Home giới thiệu trong hệ sinh thái Việt hóa và học ngoại ngữ.",
