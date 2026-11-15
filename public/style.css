@@ -274,3 +274,11 @@ button#scroll-to-top.scroll-to-top svg path{stroke:#285b40!important;stroke-widt
 .detail-related .related-robot-copy small{font-size:13px;line-height:1.45}
 .detail-related .related-arrow{font-size:22px;color:#426c51;justify-self:end}
 @media(max-width:700px){.detail-related .related-robot-card{grid-template-columns:76px minmax(0,1fr) 20px;gap:12px;min-height:104px;padding:12px}.detail-related .related-robot-card img,.detail-related .related-image-fallback{width:76px;height:76px}.detail-related .related-robot-copy strong{font-size:16px}}
+
+
+/* True viewport-centered shopping dialog (portal attached to body) */
+body.shop-dialog-open{overflow:hidden!important}
+body > #shop-dialog.shop-dialog:not([hidden]){position:fixed!important;inset:0!important;inset-block:0!important;inset-inline:0!important;width:100vw!important;height:100vh!important;height:100dvh!important;display:flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;padding:clamp(14px,4vw,24px)!important;overflow:hidden!important;z-index:99999!important;background:rgba(16,38,26,.58)!important}
+body > #shop-dialog.shop-dialog[hidden]{display:none!important}
+body > #shop-dialog .shop-modal{position:relative!important;box-sizing:border-box!important;flex:0 1 550px!important;width:100%!important;max-width:550px!important;max-height:calc(100dvh - 32px)!important;overflow-y:auto!important;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;margin:0!important;border-radius:22px!important;box-shadow:0 24px 80px rgba(0,0,0,.24)}
+@media(max-width:520px){body > #shop-dialog.shop-dialog:not([hidden]){padding:16px!important}body > #shop-dialog .shop-modal{max-height:calc(100dvh - 32px)!important;padding:26px 20px!important;border-radius:20px!important}}
