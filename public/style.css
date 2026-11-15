@@ -32,3 +32,12 @@
 
 /* Language selector: never filled, consistent with fine-outline design */
 header nav .language-switch .language-trigger,header nav .language-switch .language-trigger:not(:hover),header nav .language-switch .language-trigger:hover,header nav .language-switch .language-trigger[aria-expanded="true"]{background:transparent!important;background-color:transparent!important;color:#285b40!important;border:1px solid #bcd2c2!important;box-shadow:none!important;min-width:75px}header nav .language-switch .language-trigger svg{stroke:#285b40!important;fill:none!important}header nav .language-switch .language-trigger:hover{border-color:#5f9973!important;background-color:#f5f8f3!important}header nav .language-switch .language-trigger:focus-visible{outline:2px solid #5f9973;outline-offset:3px}
+
+/* Sticky navigation and floating scroll-to-top control */
+header{position:sticky;top:0;z-index:100;background:#fafaf7;box-shadow:0 1px 0 rgba(38,85,59,.08)}
+header nav{padding-top:14px;padding-bottom:14px}
+.scroll-to-top{position:fixed;right:22px;bottom:92px;z-index:105;width:46px;height:46px;display:grid;place-items:center;border:1px solid #a9c4af;border-radius:50%;background:#fafaf7;color:#285b40;box-shadow:0 4px 16px #163a241a;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s}
+.scroll-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
+.scroll-to-top:hover{background:#edf5ee;border-color:#518766}
+.scroll-to-top svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:650px){header nav{padding:11px 14px;gap:8px}.scroll-to-top{right:15px;bottom:88px;width:42px;height:42px}}
