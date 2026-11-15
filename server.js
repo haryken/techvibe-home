@@ -39,7 +39,7 @@ app.get('/api/admin/export',auth,async(req,res)=>{res.setHeader('Content-Disposi
 async function notifyNewOrder(order){
  const token=process.env.TELEGRAM_BOT_TOKEN,chatId=process.env.TELEGRAM_CHAT_ID;
  if(!token||!chatId)return;
- const text=['TechVibe Home - Đơn hàng mới','Mã: '+order.id,'Khách: '+order.name,'SĐT: '+order.phone,'Trạng thái: '+order.status,'Sản phẩm: '+order.items.map(x=>x.title+' x'+x.quantity).join(', ')].join('\\n');
+ const text=['TechVibe Home - Đơn hàng mới','Mã: '+order.id,'Khách: '+order.name,'SĐT: '+order.phone,'Trạng thái: '+order.status,'Sản phẩm: '+order.items.map(x=>x.title+' x'+x.quantity).join(', ')].join('\n');
  try{
   const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),5000);
   try{const response=await fetch('https://api.telegram.org/bot'+token+'/sendMessage',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({chat_id:chatId,text}),signal:controller.signal});if(!response.ok)console.warn('Telegram order notification failed:',response.status)}
