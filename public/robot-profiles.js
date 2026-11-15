@@ -3,7 +3,7 @@ export const robotProfiles={
     "headline": "Robot thú cưng AI để bàn – tương tác tự nhiên, biểu cảm sinh động",
     "audience": "Người yêu robot đồng hành, thích trò chuyện và khám phá AI.",
     "stock": [
-      "Biểu cảm khuôn mặt, nhảy múa, phản ứng với chạm và tương tác giọng nói.",
+      "Theo LivingAI: hơn 1.000 biểu cảm và chuyển động, nhận diện khuôn mặt bằng camera HD, bốn micro định hướng âm thanh, cảm biến chạm trên đầu, nhảy múa và khám phá mặt bàn.",
       "Các trò chơi và lệnh chính hãng phụ thuộc phiên bản firmware."
     ],
     "custom": [
@@ -20,7 +20,7 @@ export const robotProfiles={
     "headline": "Robot AI bánh xích – trò chuyện, khám phá và chơi cùng bạn",
     "audience": "Người thích robot tự hành, lập trình và trải nghiệm AI.",
     "stock": [
-      "Di chuyển bằng bánh xích, biểu cảm trên màn hình, tương tác với môi trường và khối lập phương.",
+      "Theo Anki: di chuyển bằng bánh xích, tự khám phá và quay về đế sạc; nhận diện khuôn mặt, chụp ảnh, phản hồi khi vuốt lưng và tương tác với khối lập phương.",
       "Tính năng kết nối chính hãng có thể phụ thuộc dịch vụ và phiên bản phần mềm."
     ],
     "custom": [
@@ -83,15 +83,15 @@ export const robotProfiles={
     "headline": "Robot charm nhỏ gọn, nhiều biểu cảm và tương tác chạm",
     "audience": "Người thích robot nhỏ, phụ kiện dễ mang theo.",
     "stock": [
-      "Màn hình màu, biểu cảm, tương tác chạm và các chế độ chơi.",
+      "Theo Energize Lab: màn hình TFT màu 1,28 inch, cảm ứng chạm và phản ứng khi lắc, thay vỏ theo chủ đề, trò chuyện AI qua Wi-Fi 2.4 GHz và các lệnh ngoại tuyến.",
       "Các chế độ trò chuyện và ngôn ngữ phụ thuộc firmware của hãng."
     ],
     "custom": [
       "TechVibe Home cung cấp hướng dẫn cập nhật và sử dụng Eiliko.",
       "Không giới thiệu là có firmware tiếng Việt tự phát triển khi chưa xác minh."
     ],
-    "languages": "Một số bản firmware mới của hãng có hỗ trợ tiếng Việt; cần kiểm tra phiên bản máy.",
-    "hardware": "Cập nhật theo hướng dẫn và yêu cầu kết nối của hãng.",
+    "languages": "Eiliko có hỗ trợ tiếng Việt trong danh sách ngôn ngữ hãng công bố; kiểm tra firmware và kết nối thực tế khi giao máy.",
+    "hardware": "Theo hãng: 68 × 56 × 84 mm, khoảng 70 g, pin 400 mAh, sạc USB-C, thời gian chơi công bố khoảng 150 phút (tùy sử dụng).",
     "caution": "Hãy kiểm tra firmware thực tế trước khi cam kết tính năng trò chuyện."
   },
   "Emun": {
@@ -105,7 +105,7 @@ export const robotProfiles={
       "Dự án robot giáo dục được TechVibe Home giới thiệu trong hệ sinh thái Việt hóa và học ngoại ngữ.",
       "Chưa công bố chi tiết phần cứng, nền tảng AI và danh sách bài học đã kiểm thử."
     ],
-    "languages": "Tập trung học tiếng Anh; khả năng hướng dẫn bằng tiếng Việt cần xác nhận theo phiên bản.",
+    "languages": "TechVibe Home cung cấp Emun hỗ trợ tiếng Việt để hướng dẫn và luyện học tiếng Anh; nội dung học và khả năng nhận giọng nói cần xác nhận theo phiên bản.",
     "hardware": "Chưa có bảng thông số phần cứng công khai được xác minh.",
     "caution": "Ảnh và thông số sản phẩm đang cập nhật; không dùng ảnh robot khác làm Emun."
   },
@@ -113,14 +113,14 @@ export const robotProfiles={
     "headline": "Robot giải trí và học lập trình với các trò chơi tương tác",
     "audience": "Người mới học robotics, thích lập trình và trò chơi.",
     "stock": [
-      "Robot bánh xích, tương tác với khối lập phương và các trò chơi.",
-      "Khả năng chạy app và lập trình phụ thuộc phiên bản thiết bị, phần mềm."
+      "Theo Anki: robot điều khiển bằng ứng dụng Android/iOS tương thích, chơi trò chơi với ba khối lập phương, hỗ trợ Code Lab/Scratch để làm quen lập trình STEM.",
+      "Theo Anki: sử dụng app tương thích, Code Lab/Scratch, trò chơi với khối lập phương; không được thiết kế để hội thoại tự nhiên bằng giọng nói."
     ],
     "custom": [
       "TechVibe Home có cung cấp và nghiên cứu Việt hóa robot Cozmo.",
       "Chưa công bố danh sách tính năng tiếng Việt đã xác minh cho mọi máy."
     ],
-    "languages": "Cần xác nhận phiên bản và phần mềm khi tư vấn.",
+    "languages": "Cozmo không phải robot giao tiếp hội thoại bằng giọng nói như Vector/EMO; chơi game và học lập trình qua ứng dụng tương thích.",
     "hardware": "Kiểm tra tương thích ứng dụng điều khiển trước khi mua.",
     "caution": "Không nhầm firmware Cozmars V3 đang nghiên cứu với Cozmo chính hãng."
   },
@@ -128,14 +128,14 @@ export const robotProfiles={
     "headline": "Robot đồng hành sử dụng điện thoại làm gương mặt",
     "audience": "Người muốn tận dụng điện thoại để tạo trải nghiệm robot tương tác.",
     "stock": [
-      "Thiết kế kết hợp điện thoại với phần đế robot tương tác.",
+      "LOOI sử dụng điện thoại thông minh làm khuôn mặt và phần đế robot để di chuyển/tương tác; tính năng giọng nói, AI và ngôn ngữ do ứng dụng trên điện thoại cung cấp.",
       "Các tính năng phụ thuộc điện thoại, app và phiên bản thiết bị."
     ],
     "custom": [
       "TechVibe Home có kinh nghiệm sử dụng và hỗ trợ Looi.",
       "Chưa công bố firmware tiếng Việt riêng đã hoàn thiện."
     ],
-    "languages": "Tùy ứng dụng và phiên bản, cần xác nhận trước khi mua.",
+    "languages": "Looi phiên bản TechVibe Home giới thiệu có hỗ trợ tương tác tiếng Việt; khả năng nhận và trả lời phụ thuộc ứng dụng, điện thoại và phiên bản phần mềm.",
     "hardware": "Cần kiểm tra tương thích điện thoại và cảm biến trên từng máy.",
     "caution": "Tính năng cần được thử với điện thoại cụ thể."
   }
