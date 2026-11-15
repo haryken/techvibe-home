@@ -264,3 +264,13 @@ button#scroll-to-top.scroll-to-top svg path{stroke:#285b40!important;stroke-widt
 @keyframes skeleton-shimmer{to{background-position-x:-220%}}
 @media(max-width:700px){.detail-skeleton{padding-top:20px}.detail-skeleton-top{grid-template-columns:1fr;gap:24px}.skeleton-image{aspect-ratio:1.35}.detail-skeleton-info{gap:14px}.skeleton-section-title{margin-top:34px}.detail-skeleton-cards{grid-template-columns:1fr;gap:12px}.skeleton-card{height:115px}}
 @media(prefers-reduced-motion:reduce){.skeleton{animation:none;background:#eaf0e8}}
+
+
+/* Related robot suggestions: compact image + text cards */
+.detail-related .related-robot-card{display:grid;grid-template-columns:88px minmax(0,1fr) 22px;align-items:center;gap:16px;min-height:112px;padding:12px 16px;overflow:hidden}
+.detail-related .related-robot-card img,.detail-related .related-image-fallback{width:88px;height:88px;object-fit:contain;border-radius:14px;background:#f0f4ed;display:flex;align-items:center;justify-content:center;font-size:34px}
+.detail-related .related-robot-copy{min-width:0;display:flex;flex-direction:column;gap:6px}
+.detail-related .related-robot-copy strong{font-size:17px;line-height:1.3}
+.detail-related .related-robot-copy small{font-size:13px;line-height:1.45}
+.detail-related .related-arrow{font-size:22px;color:#426c51;justify-self:end}
+@media(max-width:700px){.detail-related .related-robot-card{grid-template-columns:76px minmax(0,1fr) 20px;gap:12px;min-height:104px;padding:12px}.detail-related .related-robot-card img,.detail-related .related-image-fallback{width:76px;height:76px}.detail-related .related-robot-copy strong{font-size:16px}}
