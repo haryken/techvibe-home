@@ -48,7 +48,11 @@ async function notifyNewOrder(order){
 }
 const validEmail=x=>typeof x==='string'&&x.length<=254&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(x);
 const publicProduct=r=>({id:r.id,title:r.title,description:r.data.summary||'',image:r.data.image||'',price:Number.isSafeInteger(r.data.price)&&r.data.price>0?r.data.price:null,sellable:r.data.public!==false&&r.data.sellable!==false,robot:r.robot,category:r.data.category||'',maker:r.data.maker||'',warranty:r.data.warranty||'',officialFeatures:r.data.officialFeatures||'',customFeatures:r.data.customFeatures||''});
-app.get('/api/shop/products',async(req,res)=>res.json((await db.prepare("SELECT * FROM records WHERE type='robots' ORDER BY title").all()).map(parse).filter(x=>x.data.public!==false).map(publicProduct)));
+app.get('/api/shop/products',async(req,res)=>{
+ const robots=(await db.prepare("SELECT * FROM records WHERE type='robots' ORDER BY title").all()).map(parse).filter(x=>x.data.public!==false);
+ const inventory=await db.prepare("SELECT robot,status FROM records WHERE type='inventory'").all();
+ res.json(robots.map(r=>({...publicProduct(r),stockRecorded:inventory.some(x=>x.robot===r.title),stockCount:inventory.filter(x=>x.robot===r.title&&['Có sẵn','Đang bán'].includes(x.status)).length})));
+});
 const customerAuth=async(req,res,next)=>{const t=(req.headers.authorization||'').replace(/^Bearer /,'');const session=t&&await db.prepare('SELECT customer_id FROM customer_sessions WHERE token_hash=? AND expiry>?').get(hash(t),Date.now());if(!session)return res.status(401).json({error:'Vui lòng đăng nhập tài khoản khách hàng'});req.customerId=session.customer_id;next()};
 const optionalCustomer=async(req,res,next)=>{const t=(req.headers.authorization||'').replace(/^Bearer /,'');const session=t&&await db.prepare('SELECT customer_id FROM customer_sessions WHERE token_hash=? AND expiry>?').get(hash(t),Date.now());req.customerId=session?.customer_id||null;next()};
 const customerPublic=c=>({id:c.id,name:c.name,email:c.email,phone:c.phone});
