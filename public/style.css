@@ -143,3 +143,26 @@ header nav{padding-top:14px;padding-bottom:14px}
  .compare-controls label{padding:10px!important;font-size:13px}
  .compare-table{min-width:510px}
 }
+
+
+/* Slide-out hamburger drawer for mobile */
+.drawer-head,.mobile-drawer-backdrop{display:none}
+@media(max-width:900px){
+ body.drawer-open{overflow:hidden}
+ #app>header .mobile-menu-toggle{width:46px;height:46px;padding:0;display:grid;place-items:center;border-radius:13px}
+ .hamburger-lines{width:21px;display:flex;flex-direction:column;gap:5px}
+ .hamburger-lines i{display:block;height:2px;width:100%;background:#285b40;border-radius:4px}
+ #app>header .mobile-drawer-backdrop:not([hidden]){display:block;position:fixed;inset:0;z-index:150;background:rgba(10,28,17,.48);opacity:1}
+ #app>header .links{display:flex!important;position:fixed!important;top:0!important;bottom:0!important;left:auto!important;right:0!important;width:min(340px,86vw)!important;height:100dvh!important;max-height:none!important;z-index:151!important;box-sizing:border-box;background:#fafaf7!important;padding:0 20px calc(22px + env(safe-area-inset-bottom))!important;gap:8px!important;overflow-y:auto!important;overscroll-behavior:contain;box-shadow:-12px 0 35px #142c1c25;transform:translateX(105%);visibility:hidden;pointer-events:none;transition:transform .26s ease,visibility .26s ease;flex-direction:column!important;align-items:stretch!important}
+ #app>header .links.mobile-open{transform:translateX(0);visibility:visible;pointer-events:auto}
+ #app>header .drawer-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:calc(24px + env(safe-area-inset-top)) 0 20px;border-bottom:1px solid #dfe9e0;margin-bottom:8px}
+ #app>header .drawer-head strong{font-size:20px;color:#20452f}
+ #app>header .drawer-head button{display:grid;place-items:center;width:42px;height:42px;border:1px solid #d6e4d8;border-radius:12px;background:white;color:#234b34;font-size:20px}
+ #app>header .links>a{display:flex!important;align-items:center;min-height:48px;padding:12px 14px!important;border:0!important;border-radius:12px!important;font-size:15px!important;font-weight:600;color:#244c35}
+ #app>header .links>a:hover,#app>header .links>a:focus-visible{background:#eaf2e9}
+ #app>header .links .language-switch{order:10;margin-top:12px}
+ #app>header .links .header-account{order:11}
+ #app>header .links .header-cart{order:12}
+ #app>header .links .language-trigger{min-height:46px}
+}
+@media(prefers-reduced-motion:reduce){#app>header .links{transition:none!important}}
