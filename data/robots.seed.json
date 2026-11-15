@@ -68,5 +68,25 @@
     "source": "",
     "imageVerified": false,
     "seedVersion": 2
+  },
+  {
+    "title": "Cozmo",
+    "image": "",
+    "maker": "Anki",
+    "category": "Giáo dục",
+    "summary": "Robot bánh xích với trò chơi và hoạt động học lập trình; kiểm tra khả năng tương thích ứng dụng theo từng máy.",
+    "source": "",
+    "imageVerified": false,
+    "seedVersion": 3
+  },
+  {
+    "title": "Looi",
+    "image": "",
+    "maker": "Tangible Future",
+    "category": "Để bàn",
+    "summary": "Robot đồng hành sử dụng điện thoại làm gương mặt, khả năng tương tác tùy thiết bị và ứng dụng.",
+    "source": "",
+    "imageVerified": false,
+    "seedVersion": 3
   }
 ]
