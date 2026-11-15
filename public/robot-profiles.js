@@ -1,5 +1,6 @@
 export const robotProfiles={
   "EMO": {
+    "source": "https://living.ai/emo/",
     "headline": "Robot thú cưng AI để bàn – tương tác tự nhiên, biểu cảm sinh động",
     "audience": "Người yêu robot đồng hành, thích trò chuyện và khám phá AI.",
     "stock": [
@@ -17,6 +18,7 @@ export const robotProfiles={
     "caution": "Tính năng custom cần xác nhận board và firmware thực tế trước khi giao."
   },
   "Vector": {
+    "source": "https://anki.bot/pages/meet-vector",
     "headline": "Robot AI bánh xích – trò chuyện, khám phá và chơi cùng bạn",
     "audience": "Người thích robot tự hành, lập trình và trải nghiệm AI.",
     "stock": [
@@ -80,6 +82,7 @@ export const robotProfiles={
     "caution": "Không hứa hẹn thời lượng pin cố định cho mọi điều kiện sử dụng."
   },
   "Eiliko": {
+    "source": "https://www.energizelab.com/eiliko/",
     "headline": "Robot charm nhỏ gọn, nhiều biểu cảm và tương tác chạm",
     "audience": "Người thích robot nhỏ, phụ kiện dễ mang theo.",
     "stock": [
@@ -110,6 +113,7 @@ export const robotProfiles={
     "caution": "Ảnh và thông số sản phẩm đang cập nhật; không dùng ảnh robot khác làm Emun."
   },
   "Cozmo": {
+    "source": "https://support.anki.bot/article/139-what-is-the-difference-between-cozmo-and-vector",
     "headline": "Robot giải trí và học lập trình với các trò chơi tương tác",
     "audience": "Người mới học robotics, thích lập trình và trò chơi.",
     "stock": [
@@ -125,6 +129,7 @@ export const robotProfiles={
     "caution": "Không nhầm firmware Cozmars V3 đang nghiên cứu với Cozmo chính hãng."
   },
   "Looi": {
+    "source": "https://www.kickstarter.com/projects/tangiblefuture/looi-robot-turn-your-smartphone-into-a-desktop-robot/faqs",
     "headline": "Robot đồng hành sử dụng điện thoại làm gương mặt",
     "audience": "Người muốn tận dụng điện thoại để tạo trải nghiệm robot tương tác.",
     "stock": [
