@@ -166,3 +166,22 @@ header nav{padding-top:14px;padding-bottom:14px}
  #app>header .links .language-trigger{min-height:46px}
 }
 @media(prefers-reduced-motion:reduce){#app>header .links{transition:none!important}}
+
+
+/* Robot collection navigation: swipeable chips instead of wrapped ticker */
+.ticker{overflow:hidden;background:#f6f8f4}
+.ticker .wrap.robot-quicklinks{display:flex!important;align-items:center!important;justify-content:flex-start!important;flex-wrap:nowrap!important;gap:10px!important;max-width:1320px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;padding-top:18px!important;padding-bottom:18px!important;scrollbar-width:none}
+.ticker .wrap.robot-quicklinks::-webkit-scrollbar{display:none}
+.robot-quicklink{flex:0 0 auto;display:inline-flex;align-items:center;gap:9px;min-height:46px;padding:10px 15px;background:#fff;border:1px solid #dce7dc;border-radius:14px;color:#28553c!important;font-size:14px;font-weight:700;white-space:nowrap;text-decoration:none;scroll-snap-align:start;transition:border-color .2s,background .2s}
+.robot-quicklink:hover{background:#eaf3ea;border-color:#b2cbb6}
+.robot-quicklink-icon{color:#8fa88f;font-size:13px}.robot-quicklink-arrow{color:#829d86;font-size:14px}
+@media(max-width:700px){
+ .ticker .wrap.robot-quicklinks{padding-left:16px!important;padding-right:16px!important;gap:9px!important}
+ .robot-quicklink{min-height:44px;font-size:13px;padding:10px 13px}
+ .collection{padding-top:52px;padding-bottom:65px}
+ .section-intro h2{font-size:clamp(32px,8vw,44px);line-height:1.15}
+ .hero-art{min-width:0;overflow:hidden}
+ .hero-note{max-width:calc(100% - 26px);box-sizing:border-box}
+ .hero-note>div{min-width:0}
+ .hero-note small{overflow-wrap:anywhere}
+}
