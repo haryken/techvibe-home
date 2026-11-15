@@ -98,9 +98,16 @@ function setupLanguageSwitcher(){const trigger=document.querySelector('#language
 // Bootstrap after all lexical declarations are initialized.
 // Client-side navigation: keep the document, cart state and header mounted.
 let navigationVersion=0;
+function robotDetailSkeleton(){
+ const slug=decodeURIComponent(location.pathname.split('/')[2]||'');
+ const product=catalog.find(x=>slugOf(x.name)===slug);
+ const name=product?.name||'Robot';
+ shell('<main class="wrap section detail-skeleton" aria-busy="true" aria-label="Đang tải thông tin robot"><div class="detail-skeleton-top"><div class="skeleton skeleton-image"></div><div class="detail-skeleton-info"><div class="skeleton skeleton-line short"></div><h1>'+esc(name)+'</h1><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line medium"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-button"></div></div></div><div class="skeleton skeleton-line medium skeleton-section-title"></div><div class="detail-skeleton-cards">'+Array.from({length:3},()=>'<div class="skeleton skeleton-card"></div>').join('')+'</div></main>');
+}
 async function route(){
  const current=++navigationVersion;
  const path=location.pathname;
+ if(path.startsWith('/robot/')&&!publicRobotCache.data)robotDetailSkeleton();
  const render=path.startsWith('/admin')||path.startsWith('/quan-ly')?admin:
  path.startsWith('/robot/')?robotDetail:
  path==='/compare'?()=>comparePage(shell,api):
@@ -117,8 +124,9 @@ document.addEventListener('click',event=>{
  const a=event.target.closest('a[href]');if(!a||a.target||a.hasAttribute('download'))return;
  const url=new URL(a.href,location.href);if(url.origin!==location.origin||!['http:','https:'].includes(url.protocol))return;
  if(url.pathname===location.pathname&&url.search===location.search&&url.hash){return}
- event.preventDefault();history.pushState({},'',url.pathname+url.search+url.hash);if(url.pathname!==location.pathname||url.hash){}void route();
+ event.preventDefault();history.pushState({},'',url.pathname+url.search+url.hash);void route();
 });
 window.addEventListener('popstate',()=>{void route()});
 document.addEventListener('pointerover',event=>{if(event.target.closest('a[href^="/robot/"]'))void api('/api/public/robots').catch(()=>{})},{passive:true});
+document.addEventListener('pointerdown',event=>{if(event.target.closest('a[href^="/robot/"]'))void api('/api/public/robots').catch(()=>{})},{passive:true});
 void route();
