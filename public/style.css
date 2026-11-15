@@ -228,3 +228,9 @@ header nav{padding-top:14px;padding-bottom:14px}
 #scroll-to-top svg{display:block!important;width:22px!important;height:22px!important;min-width:22px;min-height:22px;fill:none!important;stroke:#285b40!important;stroke-width:2.5!important;stroke-linecap:round!important;stroke-linejoin:round!important;opacity:1!important;visibility:visible!important}
 #scroll-to-top svg path{fill:none!important;stroke:#285b40!important;stroke-width:2.5!important}
 #scroll-to-top.visible{visibility:visible!important;opacity:1!important;pointer-events:auto!important}
+
+
+/* iOS Safari: center back-to-top arrow precisely inside the button */
+button#scroll-to-top.scroll-to-top{box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:0!important;line-height:1!important;overflow:hidden!important;flex-direction:row!important}
+button#scroll-to-top.scroll-to-top svg{position:static!important;display:block!important;flex:0 0 20px!important;width:20px!important;height:20px!important;max-width:20px!important;max-height:20px!important;margin:0!important;padding:0!important;transform:none!important;overflow:visible!important}
+button#scroll-to-top.scroll-to-top svg path{stroke:#285b40!important;stroke-width:2.2!important}
