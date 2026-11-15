@@ -1,7 +1,7 @@
 const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const slug=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 export async function comparePage(shell,api){
- const products=(await api('/api/shop/products')).filter(x=>['EMO','Vector','AIBI','Alpha Mini','Loona','Eiliko','Emun'].includes(x.title));
+ const products=(await api('/api/shop/products')).filter(x=>['EMO','Vector','AIBI','Alpha Mini','Loona','Eiliko','Emun','Cozmo','Looi'].includes(x.title));
  shell('<main class="wrap customer-page"><div class="micro">TECHVIBE HOME / TƯ VẤN</div><h1>So sánh robot AI</h1><p>Chọn tối đa 3 robot để so sánh. Tính năng có thể khác nhau theo phiên bản phần cứng.</p><div class="compare-controls">'+products.map(p=>'<label><input type="checkbox" value="'+escapeHtml(p.id)+'" '+(['EMO','Vector'].includes(p.title)?'checked':'')+'>'+escapeHtml(p.title)+'</label>').join('')+'</div><div id="compare-result"></div></main>');
  const draw=()=>{
   const checked=[...document.querySelectorAll('.compare-controls input:checked')];
